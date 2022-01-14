@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet</title>
+</head>
+<body>
+    <nav>
+      <div>
+            <button (click)="sortBy('price')">Price</button>
+            <button  (click)="sortBy('rating.rate')">Rate</button>
+              <select #ttt (change)="groupByCategory(ttt.value)">
+                <option value="">Categories</option>
+                <option  *ngFor="let category of categories" value="{{category}}">{{category}}</option>
+              </select>
+      </div>
+    </nav>
+    <table>
+      <thead>
+        <tr>
+          <th ></th>
+          <th >Product</th>
+          <th >Price</th>
+          <th >Description</th>
+          <th >Category</th>
+          <th >Rating</th>
+          <th >Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products | filterBy:group:cat |orderBy:key| paginate: { itemsPerPage: 5, currentPage: p }  ">
+          <td id=><img src="{{product.image}}"/></td>
+          <td>{{product.title}}</td>
+          <td>{{product.price}}DH</td>
+          <td><span>{{product.description}}</span></td>
+          <td>{{product.category}}</td>
+          <td>{{product.rating.rate}} <i class="fas fa-star"></i></td>
+          <td>{{product.rating.count}}<i class="fas fa-layer-group"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+        <pagination-controls class="current" (pageChange)="p=$event"></pagination-controls>
+    </div>
+</body>
+</html>
+<router-outlet></router-outlet>

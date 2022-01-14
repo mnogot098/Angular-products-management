@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+button{
+    background-color: white;
+    color: rgb(9, 145, 155);
+    border: none;
+    margin: 20px;
+    font-weight: bold;
+}
+select{
+    border: none;
+    color: rgb(9, 145, 155);
+    font-weight: bold;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 5px 10px rgb(235, 233, 233);
+    text-align: left;
+    margin:auto;
+}
+th{
+    background-color: rgb(9, 145, 155);
+    color:white;
+    padding:1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-align: center;
+}
+td{
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgb(231, 229, 229);
+    text-transform: capitalize;
+}
+img{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.pagination{
+    margin: 50px;
+    margin-left: 540px;
+}
+select,li:hover{
+    cursor: pointer;
+}
+i{
+    color: yellow;
+}
